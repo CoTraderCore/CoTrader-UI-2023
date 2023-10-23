@@ -98,7 +98,7 @@ function App(props) {
       const isException = exceptions.some(el => currentPath.includes(el));
       if (!isException) {
         // Replace the current address with web3 off
-        const web3offAddress = `/web3off/`;
+        const web3offAddress = `${window.location.origin}/web3off${currentPath}`;
         console.log(web3offAddress);
         window.location.href = web3offAddress;
       }
