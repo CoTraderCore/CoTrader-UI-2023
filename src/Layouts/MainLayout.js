@@ -9,7 +9,7 @@ import DashboardHeader from '../Components/common/DashboardHeader';
 import { Observer, inject } from 'mobx-react';
 
 function MainLayout(props) {
-   
+
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { colorMode, toggleColorMode } = useColorMode(false)
     const Boxbg = useColorModeValue("#F3F6FD", "#110938");
@@ -28,7 +28,9 @@ function MainLayout(props) {
                 <GridItem >
                     <Sidebar isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
                 </GridItem>
-               
+                <Observer>
+                    {() => {
+                        return (
                             <GridItem className='example' bg={Boxbg} style={{ flexGrow: 1, overflow: "auto", }}>
                                 <Grid mt={5} px={2}>
                                     <DashboardHeader />
@@ -48,7 +50,9 @@ function MainLayout(props) {
                                 }
                                 <Outlet />
                             </GridItem>
-                    
+                        )
+                    }}
+                </Observer>
             </Grid>
         </Box>
     )
