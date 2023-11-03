@@ -1,6 +1,6 @@
 import React from 'react';
 import getWeb3 from '../utils/getWeb3'
-import { Button, Text, Box, Tooltip } from '@chakra-ui/react';
+import { Button, Text, Box } from '@chakra-ui/react';
 import { BiBadgeCheck } from 'react-icons/bi'
 import {
   NeworkID,
@@ -34,6 +34,14 @@ function Wallet(props) {
           >
             <BiBadgeCheck size={20} /> <Text>Connected</Text>
           </Button>
+          {
+            props.MobXStorage.netId && NeworkID !== props.MobXStorage.netId
+              ?
+              (
+                <Text sx={{ color: "red", fontSize: "sm",}}>ERROR: WRONG NETWORK</Text>
+              )
+              : null
+          }
         </Box>
       )
         :
