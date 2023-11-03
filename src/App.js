@@ -80,7 +80,7 @@ function App(props) {
                   <Sidebar isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
                 </GridItem>
                 <GridItem className='example' sx={{ flexGrow: 1, overflow: "auto", }}>
-                  <Box px={2}>
+                  <Box mt={2} px={2}>
                     <DashboardHeader />
                   </Box>
                   <Switch>
