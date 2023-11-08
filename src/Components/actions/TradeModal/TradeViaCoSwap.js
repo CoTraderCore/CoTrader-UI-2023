@@ -86,7 +86,7 @@ class TradeViaCoSwap extends Component {
   ErrorMsg = () => {
     if (this.state.ERRORText.length > 0) {
       return (
-        <Alert variant="danger">
+        <Alert status="error" mt={2}>
           {this.state.ERRORText}
         </Alert>
       )
