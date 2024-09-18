@@ -139,7 +139,6 @@ function CreateNewFund(props) {
 
                             <Stack spacing={5} direction='row'>
                                 <Checkbox colorScheme='red'
-                                    checked={tradeVerification}
                                     onChange={() => setTradeVerification(!tradeVerification)}
                                 >
                                     Use trade varification
